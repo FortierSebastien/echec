@@ -16,8 +16,14 @@ dependencies {
     compile project(':commun_javafx')
 
 }
-task(joueur01, dependsOn: 'classes', type: JavaExec) {
-	main = 'echec_javafx.Principal'
-	classpath = sourceSets.main.runtimeClasspath
+   task(joueur01, dependsOn: 'classes', type: JavaExec) {
+   main = 'echec_javafx.Principal'
+   classpath = sourceSets.main.runtimeClasspath
+   jvmArgs('-Duser.language=fr')
+}
 
+task(joueur01En, dependsOn: 'classes', type: JavaExec) {
+   main = 'echec_javafx.Principal'
+   classpath = sourceSets.main.runtimeClasspath
+   jvmArgs('-Duser.language=en')
 }

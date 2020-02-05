@@ -1,4 +1,4 @@
-rootProject.name = 'echec_javafx'
+rootProject.name = 'jeu_echec_SF-Atelier01'
 
 include ':commun'
 project(':commun').projectDir = file('../tutoriels_java/commun')

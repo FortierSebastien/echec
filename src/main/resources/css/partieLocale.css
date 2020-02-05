@@ -1,0 +1,147 @@
+.conteneurPrincipal {
+    -fx-border-style: solid;
+-fx-border-width: 3px;
+-fx-border-color: #161620;
+-fx-background-color: wheat;
+-fx-alignment: center;
+
+
+}
+
+.conteneurParametreSons {
+    -fx-min-width: 160px;
+-fx-max-width: 480px;
+-fx-min-height: 120px;
+-fx-max-height: 225px;
+-fx-border-style: dashed;
+-fx-border-width: 2px;
+-fx-background-color: pink;
+
+
+
+}
+
+.slidecontainer {
+  -fx-min-width: 20px;
+  -fx-max-width: 20px; /* Width of the outside container */
+}
+
+/* The slider itself */
+.slider {
+  -webkit-appearance: none;  /* Override default CSS styles */
+  appearance: none;
+  width: 100%; /* Full-width */
+  height: 25px; /* Specified height */
+  background: ; /* Grey background */
+  outline: none; /* Remove outline */
+  opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+  -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+  transition: opacity .2s;
+}
+
+/* Mouse-over effects */
+.slider:hover {
+  opacity: 1; /* Fully shown on mouse-over */
+}
+
+/* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */ 
+.slider {
+  width: 25px; /* Set a specific slider handle width */
+  height: 25px; /* Slider handle height */
+  -fx-color: #4CAF50; /* Green background */
+  cursor: pointer; /* Cursor on hover */
+}
+
+.slider {
+  -fx-min-width: 180px; /* Set a specific slider handle width */
+  -fx-max-width: 400px;
+  height: 45px; /* Slider handle height */
+  background: #4CAF50; /* Green background */
+  cursor: pointer; /* Cursor on hover */
+}
+.texteSons{
+ -fx-font:16px Tahoma;
+    -fx-fill: linear-gradient(from 0% 0% to 100% 200%, repeat, aqua 0%, red 50%);
+    -fx-stroke: black;
+    -fx-stroke-width: 0.5;
+}
+.texteTitre{
+ -fx-font:24px bold;
+    -fx-fill: brown;
+    -fx-stroke: black;
+    -fx-stroke-width: 1;
+	-fx-alignment: center;
+}
+.texteTitres{
+ 
+	-fx-alignment: center;
+	   
+}
+
+.conteneurSons {
+    
+}
+
+.conteneurTableJeu {
+    
+}
+
+.conteneurBoutons {
+    -fx-alignment: center;
+    -fx-border-style: none dashed dashed dashed;
+-fx-border-width: 2px
+;
+-fx-max-width: 480px;
+	
+}
+
+.conteneurBoutonCancel {
+   
+
+  -fx-padding: 3px;
+  
+    -fx-border-style: dashed none dashed dashed;
+-fx-border-width: 2px;
+-fx-background-color: lightgreen;
+-fx-alignment: center-left;
+
+}
+.conteneurBoutonSave {
+
+  -fx-padding: 3px;
+  
+    -fx-border-style: dashed dashed dashed none;
+-fx-border-width: 2px;
+-fx-background-color: orange;
+-fx-alignment: center-right;
+
+}
+
+.boutonCancel {
+    -fx-alignment: center-left;
+}
+
+.boutonSave {
+    -fx-alignment: center-right;
+}
+
+.boutonCoup:hover {
+    
+}
+
+.boutonCoup:pressed {
+    
+}
+
+.conteneurGrille {
+    
+}
+
+.conteneurLigne {
+    
+}
+
+.conteneurCase {
+    
+}
+

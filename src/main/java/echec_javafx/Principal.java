@@ -37,10 +37,10 @@ public class Principal extends Application {
 	private Scene creerScenePrincipale() {
 		J.appel(this);
 		
-		ChargeurDeVue chargeur = new ChargeurDeVue("/fxml/principal.xml");
+		ChargeurDeVue chargeur = new ChargeurDeVue("/fxml/principal.xml","traductions.chaines","/css/partieLocale.css");
 		
-		Scene scene = chargeur.nouvelleScene(600, 400);
-		
+		Scene scene = chargeur.nouvelleScene(400, 260);
+		//scene.getStylesheets().add();
 		DoitEtre.nonNul(scene);
 		
 		return scene;
