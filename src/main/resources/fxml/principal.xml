@@ -4,13 +4,17 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Slider?>
-
+<?import jeu_echec.vues.composants.MonAnimation?>
 
 <?import javafx.scene.text.Text?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.image.Image?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.*?>
 
-<VBox xmlns:fx="http://javafx.com/fxml" styleClass="conteneurPrincipal">
+<StackPane xmlns:fx="http://javafx.com/fxml" styleClass="conteneurPrincipal" fx:id="conteneurPrincipal" fx:controller="jeu_echec.controleurs.controleurReglages">
+
+<VBox VBox.vgrow="ALWAYS" fx:id="anchPane">
     <VBox styleClass="conteneurParametreSons" VBox.vgrow="ALWAYS">
             <HBox styleClass="texteTitres" >
 				<Text styleClass="texteTitre" text="%titre"></Text>
@@ -20,8 +24,8 @@
 			<Text styleClass="texteSons" text="%effet"></Text>
 			<Slider styleClass="slider"/>
 			
+			 
 			
-
 			
     </VBox>
 	<HBox styleClass="conteneurBoutons" HBox.hgrow="ALWAYS" >
@@ -34,3 +38,8 @@
 	</HBox>
          
 </VBox>
+
+
+
+</StackPane>
+

@@ -20,7 +20,10 @@
 
 
 }
-
+.conteneurCercle{
+	-fx-border-style: none;
+-fx-border-width: 3px;	
+}
 .slidecontainer {
   -fx-min-width: 20px;
   -fx-max-width: 20px; /* Width of the outside container */
@@ -123,6 +126,12 @@
 
 .boutonSave {
     -fx-alignment: center-right;
+-fx--min-width:1600px;
+-fx--max-width:1600px;
+
+}
+.center {
+-fx-alignment: center;
 }
 
 .boutonCoup:hover {
