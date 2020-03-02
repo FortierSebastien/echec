@@ -14,8 +14,11 @@ import javafx.scene.image.*;
 
 import commun.debogage.DoitEtre;
 import commun.debogage.J;
+import commun_client.mvc.controleurs.FabriqueControleur;
 import commun_javafx.ChargeurDeVue;
 import commun_javafx.Initialisateur;
+import echec_client.controleurs.ControleurParametre;
+import echec_client.vues.VueParametreFX;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
@@ -23,6 +26,7 @@ import javafx.scene.layout.*;
 
 import commun.debogage.J;
 import echec_javafx.Principal;
+import echec_javafx.controleurs.ControleurParametreFX;
 import javafx.scene.shape.ArcType;
 import javafx.animation.AnimationTimer;
 import javafx.application.Application;
@@ -46,6 +50,7 @@ public class Principal extends Application {
     double ballX = 100;
     double ballY = 200;  
     double xSpeed = 4;
+    
 	
 	static {
 		J.appel(Principal.class);
@@ -63,6 +68,26 @@ public class Principal extends Application {
 	@Override
 	public void start(Stage fenetrePrincipale) throws Exception {
 		J.appel(this);
+		/*
+		
+		DialogueModal.enregistreFenetrePrincipale(fenetrePrincipale);
+		
+		ChargeurDeVue<VueParametreFX> chargeur;
+		
+		chargeur = new ChargeurDeVue<>("/fxml/parametre.xml","traductions.chaines","/css/partieLocale.css");
+		
+		VueParametreFX vue = chargeur.getVue();
+		
+		DoitEtre.nonNul(vue);
+		
+		FabriqueControleur.creerControleur(ControleurParametreFX.class, vue);
+		
+		Scene scene = chargeur.nouvelleScene(400, 260);
+		//scene.getStylesheets().add();
+		DoitEtre.nonNul(scene);
+		
+		
+		*/
 		
 		Scene scene = creerScenePrincipale();
 		
@@ -70,80 +95,7 @@ public class Principal extends Application {
 		
 		fenetrePrincipale.show();
 		
-	//}
-		/*
-		Pane root = new Pane();
-		root.setPrefSize(900, 700);
 
-		
-		
-		InputStream js = Files.newInputStream(Paths.get("images/background.gif"));
-		
-		
-		Image img = new Image(js) ;
-		
-		js.close();
-		
-		ImageView imgV = new ImageView(img);
-		
-		imgV.setFitHeight(700);
-		imgV.setFitWidth(900);
-		
-		gameMenu = new jeuMenu();
-		
-		root.getChildren().addAll(imgV,gameMenu);
-		
-		Scene scene = new Scene(root);
-		
-		fenetrePrincipale.setScene(scene);
-		
-		fenetrePrincipale.show();
-		*/
-		
-		
-		
-		 	
-
-	     /*   Group root = new Group();
-	        Scene scene = new Scene(root);
-
-	        Circle circle = new Circle();
-	        circle.setCenterX(ballX);
-	        circle.setCenterY(ballY);
-	        circle.setRadius(ballRadius);
-	        circle.setFill(Color.BLUE);
-	        root.getChildren().add(circle);
-
-	        fenetrePrincipale.setScene(scene);
-	        fenetrePrincipale.show();
-
-	        AnimationTimer animator = new AnimationTimer(){
-
-	            @Override
-	            public void handle(long arg0) {
-
-	                // UPDATE
-	                ballX += xSpeed;
-
-	                if (ballX + ballRadius >= WIDTH)
-	                {
-	                    ballX = WIDTH - ballRadius;
-	                    xSpeed *= -1;
-	                } 
-	                else if (ballX - ballRadius < 0) 
-	                {
-	                    ballX = 0 + ballRadius;
-	                    xSpeed *= -1;
-	                }
-
-	                // RENDER
-	                circle.setCenterX(ballX);
-	            }      
-	        };
-
-	        animator.start();     
-	    
-		*/
 		
 	}
 	

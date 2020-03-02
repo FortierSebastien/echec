@@ -15,4 +15,10 @@ public class ControleurParametreFX extends ControleurParametre<VueParametreFX,Af
 		
 	}
 
+	@Override
+	protected void installerReceptionCommandes() {
+		J.appel(this);
+		
+	}
+
 }

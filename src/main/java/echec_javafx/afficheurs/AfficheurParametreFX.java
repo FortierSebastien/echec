@@ -13,4 +13,10 @@ public class AfficheurParametreFX extends AfficheurParametre<VueParametreFX>{
 		J.appel(this);
 	}
 
+	@Override
+	public void rafraichirAffichage(ParametreLectureSeule modeleLectureSeule, VueParametreFX vue) {
+		J.appel(this);
+		
+	}
+
 }
