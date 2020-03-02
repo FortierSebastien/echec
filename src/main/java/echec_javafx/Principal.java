@@ -146,6 +146,9 @@ public class Principal extends Application {
 		*/
 		
 	}
+	
+	
+	
 	private Scene creerScenePrincipale() {
 		J.appel(this);
 		

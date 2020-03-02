@@ -16,24 +16,27 @@
 
 <VBox VBox.vgrow="ALWAYS" fx:id="anchPane">
     <VBox styleClass="conteneurParametreSons" VBox.vgrow="ALWAYS">
-		
-	
-		<HBox styleClass="titreMain" HBox.hgrow="ALWAYS">
-                <Text styleClass="titreMainText" text="Jeu échec"/>	
+            <HBox styleClass="texteTitres" >
+				<Text styleClass="texteTitre" text="%titre"></Text>
 			</HBox>
-		
-		<HBox styleClass="nouvellePartie" HBox.hgrow="ALWAYS">
-                <Button styleClass="button1" text="Nouvelle partie"/>	
-			</HBox>
+			<Text styleClass="texteSons" text="%musique"></Text>
+			<Slider styleClass="slider"/>
+			<Text styleClass="texteSons" text="%effet"></Text>
+			<Slider styleClass="slider"/>
 			
-			
-			<HBox styleClass="nouvellePartie" HBox.hgrow="ALWAYS" >
-                <Button styleClass="button2" text="Paramètres"/>
-            </HBox>
+			 
 			
 			
     </VBox>
-
+	<HBox styleClass="conteneurBoutons" HBox.hgrow="ALWAYS" >
+			<HBox styleClass="conteneurBoutonCancel" HBox.hgrow="ALWAYS">
+                <Button text="%cancel"/>	
+			</HBox>
+			<HBox styleClass="conteneurBoutonSave" HBox.hgrow="ALWAYS" >
+                <Button text="%save"/>
+            </HBox>
+	</HBox>
+         
 </VBox>
 
 

@@ -35,7 +35,7 @@
   appearance: none;
   width: 100%; /* Full-width */
   height: 25px; /* Specified height */
-  background: ; /* Grey background */
+  background: grey; /* Grey background */
   outline: none; /* Remove outline */
   opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
   -webkit-transition: .2s; /* 0.2 seconds transition on hover */
@@ -133,6 +133,45 @@
 .center {
 -fx-alignment: center;
 }
+.titreMain{
+	-fx-alignment: center;
+	
+}
+.titreMainText{
+	-fx-text-align: center;
+	-fx-font-size: 32px;
+	-fx-fill: brown;
+}
+
+
+.nouvellePartie {
+	-fx-alignment: center;
+	-fx-padding: 10px;
+	
+	
+}
+.button1 {
+	 -fx-background-color: red;
+	 -fx-padding: 15px 32px;
+	 -fx-text-align: center;
+	 -fx-font-size: 16px;
+	 -fx-stroke: white;
+	 -fx-min-width:260px;
+	 -fx-max-width:260px;
+	 
+}
+.button2 {
+	 -fx-background-color: green;
+	 -fx-padding: 15px 32px;
+	 -fx-text-align: center;
+	 -fx-font-size: 16px;
+	 -fx-stroke: white;
+	 -fx-min-width:260px;
+	 -fx-max-width:260px;
+	
+	 
+}
+
 
 .boutonCoup:hover {
     
