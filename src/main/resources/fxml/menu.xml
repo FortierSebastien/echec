@@ -28,7 +28,7 @@
 			
 			
 			<HBox styleClass="nouvellePartie" HBox.hgrow="ALWAYS" >
-                <Button styleClass="button2" text="Paramètres"/>
+                <Button fx:id="boutonParametre" styleClass="button2"  text="Paramètres"/>
             </HBox>
 			
 			

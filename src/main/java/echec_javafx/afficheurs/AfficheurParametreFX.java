@@ -3,7 +3,7 @@ package echec_javafx.afficheurs;
 import commun.debogage.J;
 import echec.modeles.ParametreLectureSeule;
 import echec_client.afficheurs.AfficheurParametre;
-import echec_client.vues.VueParametreFX;
+import echec_javafx.vues.VueParametreFX;
 
 public class AfficheurParametreFX extends AfficheurParametre<VueParametreFX>{
 

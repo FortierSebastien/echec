@@ -3,12 +3,15 @@ package jeu_echec.controleurs;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import commun_javafx.ChargeurDeVue;
+import echec_javafx.vues.VueParametreFX;
 import javafx.animation.AnimationTimer;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.geometry.Pos;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
@@ -21,7 +24,8 @@ public class controleurReglages implements Initializable{
 	private StackPane conteneurPrincipal;
 	@FXML
 	private VBox anchPane;
-	
+	@FXML
+	private Button boutonParametre;
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
@@ -32,6 +36,12 @@ public class controleurReglages implements Initializable{
 		gc.setFill(Color.RED);
 		gc.fillRect(0, 0, 500, 500);
 		
+		
+boutonParametre.setOnAction(e->{
+			
+			ChargeurDeVue<VueParametreFX> chargeur = new ChargeurDeVue<>("/fxml/parametre.xml", "traductions.chaines", "/css/parametre.css");
+			conteneurPrincipal.getChildren().setAll(chargeur.getParent());
+			});
 		
 		conteneurPrincipal.getChildren().add(0,c);
 		

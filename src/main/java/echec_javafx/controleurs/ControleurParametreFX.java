@@ -1,10 +1,9 @@
 package echec_javafx.controleurs;
 
 import commun.debogage.J;
-import echec_client.afficheurs.AfficheurParametre;
 import echec_client.controleurs.ControleurParametre;
-import echec_client.vues.VueParametreFX;
 import echec_javafx.afficheurs.AfficheurParametreFX;
+import echec_javafx.vues.VueParametreFX;
 
 
 public class ControleurParametreFX extends ControleurParametre<VueParametreFX,AfficheurParametreFX> {

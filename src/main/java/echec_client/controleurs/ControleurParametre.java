@@ -7,11 +7,13 @@ import echec.modeles.ParametreLectureSeule;
 import echec_client.afficheurs.AfficheurParametre;
 import echec_client.vues.VueParametre;
 
-public abstract class ControleurParametre <V extends VueParametre, A extends AfficheurParametre<V>> 
+public abstract class ControleurParametre<V extends VueParametre, A extends AfficheurParametre<V>>
 
+		extends ControleurModeleVue<ParametreLectureSeule, Parametre, V, A> {
 
-extends ControleurModeleVue<ParametreLectureSeule, Parametre , V, A>{
-
-	
+	@Override
+	protected void demarrer() {
+		J.appel(this);
+	}
 
 }

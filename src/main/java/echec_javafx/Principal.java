@@ -1,127 +1,78 @@
 package echec_javafx;
 
-
-
-import javafx.scene.*;
-import javafx.scene.image.Image;
-
-import java.io.InputStream;
-import java.nio.file.Files;
-
-import java.nio.file.Paths;
-
-import javafx.scene.image.*;
+import static echec_javafx.Constantes.CHEMIN_CHAINES;
+import static echec_javafx.Constantes.CHEMIN_PAGES_CSS;
+import static echec_javafx.Constantes.CHEMIN_PAGES_FXML;
 
 import commun.debogage.DoitEtre;
 import commun.debogage.J;
 import commun_client.mvc.controleurs.FabriqueControleur;
 import commun_javafx.ChargeurDeVue;
 import commun_javafx.Initialisateur;
-import echec_client.controleurs.ControleurParametre;
-import echec_client.vues.VueParametreFX;
+import echec_javafx.controleurs.ControleurMenuFX;
+import echec_javafx.vues.VuePageFx;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import javafx.scene.layout.*;
-
-import commun.debogage.J;
-import echec_javafx.Principal;
-import echec_javafx.controleurs.ControleurParametreFX;
-import javafx.scene.shape.ArcType;
-import javafx.animation.AnimationTimer;
-import javafx.application.Application;
-import javafx.scene.Group;
-import javafx.scene.Scene;
-import javafx.scene.paint.Color;
-import javafx.scene.shape.Circle;
-import javafx.stage.Stage;
-
-
-
-
 public class Principal extends Application {
-	
-	//jeuMenu gameMenu;
-	
-	final int WIDTH = 600;
-    final int HEIGHT = 400;
-    
-    double ballRadius = 40;
-    double ballX = 100;
-    double ballY = 200;  
-    double xSpeed = 4;
-    
-	
+
 	static {
 		J.appel(Principal.class);
-		
+
 		Initialisateur.initialiser();
-		
+
 	}
-	
+
 	public static void main(String[] args) {
 		J.appel(Principal.class);
-		
+
 		launch(args);
 	}
-	
+
 	@Override
 	public void start(Stage fenetrePrincipale) throws Exception {
 		J.appel(this);
-		/*
-		
-		DialogueModal.enregistreFenetrePrincipale(fenetrePrincipale);
-		
-		ChargeurDeVue<VueParametreFX> chargeur;
-		
-		chargeur = new ChargeurDeVue<>("/fxml/parametre.xml","traductions.chaines","/css/partieLocale.css");
-		
-		VueParametreFX vue = chargeur.getVue();
-		
-		DoitEtre.nonNul(vue);
-		
-		FabriqueControleur.creerControleur(ControleurParametreFX.class, vue);
-		
-		Scene scene = chargeur.nouvelleScene(400, 260);
-		//scene.getStylesheets().add();
-		DoitEtre.nonNul(scene);
-		
-		
-		*/
-		
-		Scene scene = creerScenePrincipale();
-		
-		fenetrePrincipale.setScene(scene);
-		
-		fenetrePrincipale.show();
-		
 
-		
+		DialogueModal.enregistreFenetrePrincipale(fenetrePrincipale);
+
+		ChargeurDeVue<VuePageFx> chargeur = creerChargeurPages();
+
+		installerSceneAccueil(fenetrePrincipale, chargeur);
+
+		instancierMVCAccueil(chargeur);
+
+		fenetrePrincipale.show();
+
 	}
-	
-	
-	
-	private Scene creerScenePrincipale() {
+
+	private void instancierMVCAccueil(ChargeurDeVue<VuePageFx> chargeur) {
 		J.appel(this);
-		
-		ChargeurDeVue chargeur = new ChargeurDeVue("/fxml/principal.xml","traductions.chaines","/css/partieLocale.css");
-		
-		Scene scene = chargeur.nouvelleScene(400, 260);
-		//scene.getStylesheets().add();
-		DoitEtre.nonNul(scene);
-		
-		return scene;
+
+		VuePageFx vue = chargeur.getVue();
+
+		DoitEtre.nonNul(vue);
+
+		FabriqueControleur.creerControleur(ControleurMenuFX.class, vue);
 	}
-	
-	@Override
-	public void stop() {
+
+	private void installerSceneAccueil(Stage fenetrePrincipale, ChargeurDeVue<VuePageFx> chargeur) {
 		J.appel(this);
+
+		Scene scene = chargeur.nouvelleScene(50, 50, 2);
+
+		fenetrePrincipale.setScene(scene);
+
+//fenetrePrincipale.setWidth(Constantes.LARGEUR);
+//fenetrePrincipale.setHeight(Constantes.HAUTEUR);
+		fenetrePrincipale.setFullScreen(true);
 	}
-	
-	/*public class jeuMenu extends Parent{
-		public jeuMenu() {
-			VBox root = new VBox(10);
-		}
-	}*/
-	
-    }
+
+	private ChargeurDeVue<VuePageFx> creerChargeurPages() {
+		J.appel(this);
+
+		ChargeurDeVue<VuePageFx> chargeur = new ChargeurDeVue<VuePageFx>(CHEMIN_PAGES_FXML, CHEMIN_CHAINES,
+				CHEMIN_PAGES_CSS);
+
+		return chargeur;
+	}
+}
