@@ -10,7 +10,7 @@ import commun_client.mvc.controleurs.FabriqueControleur;
 import commun_javafx.ChargeurDeVue;
 import commun_javafx.Initialisateur;
 import echec_javafx.controleurs.ControleurMenuFX;
-import echec_javafx.vues.VuePageFx;
+import echec_javafx.vues.VuePageFX;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
@@ -35,7 +35,7 @@ public class Principal extends Application {
 
 		DialogueModal.enregistreFenetrePrincipale(fenetrePrincipale);
 
-		ChargeurDeVue<VuePageFx> chargeur = creerChargeurPages();
+		ChargeurDeVue<VuePageFX> chargeur = creerChargeurPages();
 
 		installerSceneAccueil(fenetrePrincipale, chargeur);
 
@@ -45,17 +45,17 @@ public class Principal extends Application {
 
 	}
 
-	private void instancierMVCAccueil(ChargeurDeVue<VuePageFx> chargeur) {
+	private void instancierMVCAccueil(ChargeurDeVue<VuePageFX> chargeur) {
 		J.appel(this);
 
-		VuePageFx vue = chargeur.getVue();
+		VuePageFX vue = chargeur.getVue();
 
 		DoitEtre.nonNul(vue);
 
 		FabriqueControleur.creerControleur(ControleurMenuFX.class, vue);
 	}
 
-	private void installerSceneAccueil(Stage fenetrePrincipale, ChargeurDeVue<VuePageFx> chargeur) {
+	private void installerSceneAccueil(Stage fenetrePrincipale, ChargeurDeVue<VuePageFX> chargeur) {
 		J.appel(this);
 
 		Scene scene = chargeur.nouvelleScene(50, 50, 2);
@@ -67,10 +67,10 @@ public class Principal extends Application {
 		fenetrePrincipale.setFullScreen(true);
 	}
 
-	private ChargeurDeVue<VuePageFx> creerChargeurPages() {
+	private ChargeurDeVue<VuePageFX> creerChargeurPages() {
 		J.appel(this);
 
-		ChargeurDeVue<VuePageFx> chargeur = new ChargeurDeVue<VuePageFx>(CHEMIN_PAGES_FXML, CHEMIN_CHAINES,
+		ChargeurDeVue<VuePageFX> chargeur = new ChargeurDeVue<VuePageFX>(CHEMIN_PAGES_FXML, CHEMIN_CHAINES,
 				CHEMIN_PAGES_CSS);
 
 		return chargeur;

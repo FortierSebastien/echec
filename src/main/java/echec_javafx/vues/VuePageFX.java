@@ -14,7 +14,7 @@ import javafx.scene.layout.StackPane;
 
 import static echec_javafx.Constantes.*;
 
-public class VuePageFx implements VuePages, Initializable {
+public class VuePageFX implements VuePages, Initializable {
 	
 	@FXML
 	StackPane conteneurAccueil, conteneurPartie, conteneurParametres;

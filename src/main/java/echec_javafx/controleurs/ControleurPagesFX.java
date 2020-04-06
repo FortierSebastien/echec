@@ -14,11 +14,11 @@ import echec_client.controleurs.ControleurPages;
 import echec_javafx.afficheurs.AfficheurParametreFX;
 import echec_javafx.afficheurs.AfficheurPartieLocaleFX;
 import echec_javafx.vues.VueMenuFX;
-import echec_javafx.vues.VuePageFx;
+import echec_javafx.vues.VuePageFX;
 import echec_javafx.vues.VueParametreFX;
 import echec_javafx.vues.VuePartieLocaleFX;
 
-public class ControleurPagesFX extends ControleurPages<VuePageFx>{
+public class ControleurPagesFX extends ControleurPages<VuePageFX>{
 
 private static final Parametre parametres = new Parametre();
 	
