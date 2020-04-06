@@ -11,13 +11,14 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.layout.StackPane;
+import javafx.scene.layout.VBox;
 
 import static echec_javafx.Constantes.*;
 
 public class VuePageFX implements VuePages, Initializable {
 	
 	@FXML
-	StackPane conteneurAccueil, conteneurPartie, conteneurParametres;
+	VBox conteneurAccueil, conteneurPartie, conteneurParametres;
 
 	@Override
 	public void obtenirCommandesPourEnvoi() {
