@@ -33,7 +33,7 @@ public class Tile extends Rectangle{
 		
 		relocate(x* jeuEchec.TILE_SIZE, y* jeuEchec.TILE_SIZE);
 		
-		setFill(light ? Color.valueOf("#feb"): Color.valueOf("#582"));
+		setFill(light ? Color.ANTIQUEWHITE: Color.CHOCOLATE);
 		
 	}
 }

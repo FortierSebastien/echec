@@ -17,9 +17,9 @@ import javafx.stage.Stage;
 public class Principal extends Application {
 
 	static {
+		Initialisateur.initialiser();
 		J.appel(Principal.class);
 
-		Initialisateur.initialiser();
 
 	}
 
