@@ -9,7 +9,7 @@ import commun.debogage.J;
 import commun_client.mvc.controleurs.FabriqueControleur;
 import commun_javafx.ChargeurDeVue;
 import commun_javafx.Initialisateur;
-import echec_javafx.controleurs.ControleurMenuFX;
+import echec_javafx.controleurs.ControleurPagesFX;
 import echec_javafx.vues.VuePageFX;
 import javafx.application.Application;
 import javafx.scene.Scene;
@@ -52,7 +52,7 @@ public class Principal extends Application {
 
 		DoitEtre.nonNul(vue);
 
-		FabriqueControleur.creerControleur(ControleurMenuFX.class, vue);
+		FabriqueControleur.creerControleur(ControleurPagesFX.class, vue);
 	}
 
 	private void installerSceneAccueil(Stage fenetrePrincipale, ChargeurDeVue<VuePageFX> chargeur) {

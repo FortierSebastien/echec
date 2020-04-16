@@ -68,7 +68,7 @@ private static final Parametre parametres = new Parametre();
 	
 		J.appel(this);
 		
-		instancierMVCParametres();
+		//instancierMVCParametres();
 		instancierMVCAccueil();
 		
 	}

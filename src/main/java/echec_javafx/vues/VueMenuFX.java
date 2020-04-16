@@ -7,6 +7,7 @@ import Commande.NouvellePartie;
 import Commande.NouvellePartiePourEnvoi;
 import Commande.OuvrirParametrePourEnvoie;
 import Commande.OuvrirParametres;
+import commun.debogage.DoitEtre;
 import commun.debogage.J;
 import commun_client.commandes.FabriqueCommande;
 import echec_client.vues.VueMenu;
@@ -21,11 +22,21 @@ import javafx.scene.layout.VBox;
 public class VueMenuFX implements VueMenu,  Initializable{
 	
 	@FXML
-	Button menuNouvellePartie, menuParametres;
+	Button boutonNouvellePartie, boutonParametres;
+	
 	@FXML
 	VBox conteneurPartie;
 	OuvrirParametrePourEnvoie ouvrirParametresPourEnvoi;
 	NouvellePartiePourEnvoi nouvellePartiePourEnvoi;
+
+	@Override
+	public void initialize(URL location, ResourceBundle resources) {
+		J.appel(this);
+		
+		DoitEtre.nonNul(boutonNouvellePartie);
+		DoitEtre.nonNul(boutonParametres);
+		
+	}
 
 	@Override
 	public void obtenirCommandesPourEnvoi() {
@@ -38,8 +49,9 @@ public class VueMenuFX implements VueMenu,  Initializable{
 
 	@Override
 	public void installerCapteursEvenementsUsager() {
-		// TODO Auto-generated method stub
-		menuParametres.setOnAction(new EventHandler<ActionEvent>() {
+		J.appel(this);
+
+		boutonParametres.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent event) {
 				J.appel(this);
@@ -48,7 +60,7 @@ public class VueMenuFX implements VueMenu,  Initializable{
 			}
 		});
 		
-		menuNouvellePartie.setOnAction(new EventHandler<ActionEvent>() {
+		boutonNouvellePartie.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent event) {
 				J.appel(this);
@@ -65,10 +77,5 @@ public class VueMenuFX implements VueMenu,  Initializable{
 		
 	}
 
-	@Override
-	public void initialize(URL location, ResourceBundle resources) {
-		J.appel(this);
-		
-	}
 
 }
