@@ -10,6 +10,23 @@ import echec_client.vues.VueParametre;
 public abstract class ControleurParametre<V extends VueParametre, A extends AfficheurParametre<V>>
 
 		extends ControleurModeleVue<ParametreLectureSeule, Parametre, V, A> {
+	
+	
+
+/*	@Override
+	protected void installerReceptionCommandes() {
+		J.appel(this);
+		
+		installerRecepteurCommande(ChoisirChoix.class, new RecepteurCommandeMVC<ChoisirChoixRecue>() {
+
+			@Override
+			public void executerCommandeMVC(ChoisirChoixRecue commande) {
+				J.appel(this);
+				
+				modele.choisirChoix(commande.getChoix());
+			}
+		});
+	}*/
 
 	@Override
 	protected void demarrer() {

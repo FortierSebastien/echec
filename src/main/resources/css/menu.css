@@ -1,5 +1,5 @@
 .conteneurPrincipal {
-    -fx-border-style: solid;
+-fx-border-style: solid;
 -fx-border-width: 3px;
 -fx-border-color: #161620;
 -fx-background-color: wheat;
@@ -8,32 +8,21 @@
 
 }
 
-.conteneurParametreSons {
-    -fx-min-width: 160px;
--fx-max-width: 480px;
--fx-min-height: 120px;
--fx-max-height: 225px;
--fx-border-style: dashed;
--fx-border-width: 2px;
--fx-background-color: pink;
 
-
-
-}
 
 .titreMain{
-	-fx-alignment: center;
+	
 	
 }
 .titreMainText{
-	-fx-text-align: center;
+	
 	-fx-font-size: 32px;
 	-fx-fill: brown;
 }
 
 
 .nouvellePartie {
-	-fx-alignment: center;
+	
 	-fx-padding: 10px;
 	
 	
@@ -41,7 +30,7 @@
 .button1 {
 	 -fx-background-color: red;
 	 -fx-padding: 15px 32px;
-	 -fx-text-align: center;
+	 
 	 -fx-font-size: 16px;
 	 -fx-stroke: white;
 	 -fx-min-width:260px;
@@ -51,7 +40,7 @@
 .button2 {
 	 -fx-background-color: green;
 	 -fx-padding: 15px 32px;
-	 -fx-text-align: center;
+	 
 	 -fx-font-size: 16px;
 	 -fx-stroke: white;
 	 -fx-min-width:260px;
@@ -61,23 +50,5 @@
 }
 
 
-.boutonCoup:hover {
-    
-}
 
-.boutonCoup:pressed {
-    
-}
-
-.conteneurGrille {
-    
-}
-
-.conteneurLigne {
-    
-}
-
-.conteneurCase {
-    
-}
 

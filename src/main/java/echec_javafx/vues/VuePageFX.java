@@ -3,12 +3,16 @@ package echec_javafx.vues;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import javax.print.attribute.standard.JobOriginatingUserName;
+
 import commun.debogage.DoitEtre;
 import commun.debogage.J;
 import commun_javafx.ChargeurDeVue;
 import echec_client.vues.VuePages;
+import echec_javafx.jeuEchec;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.geometry.Pos;
 import javafx.scene.Parent;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
@@ -17,6 +21,7 @@ import static echec_javafx.Constantes.*;
 
 public class VuePageFX implements VuePages, Initializable {
 	
+	jeuEchec partie;
 	@FXML
 	VBox conteneurAccueil, conteneurPartie, conteneurParametres;
 
@@ -67,7 +72,7 @@ public class VuePageFX implements VuePages, Initializable {
 	
 	public VueMenuFX creerVueMenu() {
 		J.appel(this);
-
+		
 		ChargeurDeVue<VueMenuFX> chargeur;
 		chargeur = new ChargeurDeVue<VueMenuFX>(CHEMIN_ACCUEIL_FXML,
 						CHEMIN_CHAINES,
@@ -79,6 +84,8 @@ public class VuePageFX implements VuePages, Initializable {
 		
 		conteneurAccueil.getChildren().clear();
 		conteneurAccueil.getChildren().add(parent);
+		
+		
 		
 		return vueAcceuil;
 		
@@ -94,10 +101,19 @@ public class VuePageFX implements VuePages, Initializable {
 		
 		VuePartieLocaleFX vuePartieLocale = chargeur.getVue();
 		
+		StackPane holder = new StackPane();
+		
 		Parent parent = chargeur.getParent();
 		
 		conteneurPartie.getChildren().clear();
+		conteneurPartie.setStyle("-fx-background-color: wheat");
+		if(partie == null) {
+			partie = new jeuEchec();
+		}
+		conteneurPartie.getChildren().add(partie.createContent());
+		
 		conteneurPartie.getChildren().add(parent);
+		
 		
 		return vuePartieLocale;
 	}

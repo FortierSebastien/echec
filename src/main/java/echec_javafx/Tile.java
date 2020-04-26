@@ -1,4 +1,4 @@
-package echec_javafx;
+ package echec_javafx;
 
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;

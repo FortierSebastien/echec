@@ -61,6 +61,8 @@ public class Principal extends Application {
 		Scene scene = chargeur.nouvelleScene(50, 50, 2);
 
 		fenetrePrincipale.setScene(scene);
+		
+		
 
 //fenetrePrincipale.setWidth(Constantes.LARGEUR);
 //fenetrePrincipale.setHeight(Constantes.HAUTEUR);

@@ -21,11 +21,7 @@ public class ControleurMenuFX extends ControleurMenu<VueMenuFX>{
 		
 	}
 
-	@Override
-	protected void demarrer() {
-		J.appel(this);
-		
-	}
+
 	
 	private void ouvrirParametres() {
 		J.appel(this);
@@ -40,6 +36,11 @@ public class ControleurMenuFX extends ControleurMenu<VueMenuFX>{
 			
 			dialogueParametres.close();
 		}
+	}
+	@Override
+	protected void demarrer() {
+		J.appel(this);
+		
 	}
 
 

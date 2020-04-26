@@ -13,17 +13,21 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.*?>
 
-<StackPane xmlns:fx="http://javafx.com/fxml" styleClass="conteneurPrincipal" fx:id="conteneurPrincipal" fx:controller="jeu_echec.controleurs.controleurReglages">
+<StackPane xmlns:fx="http://javafx.com/fxml" styleClass="conteneurPrincipal" fx:id="conteneurPrincipal" fx:controller="echec_javafx.vues.VueParametreFX" VBox.vgrow="ALWAYS">
+
+
 
 <VBox VBox.vgrow="ALWAYS" fx:id="anchPane">
+  
+  
     <VBox styleClass="conteneurParametreSons" VBox.vgrow="ALWAYS">
             <HBox styleClass="texteTitres" >
 				<Text styleClass="texteTitre" text="%titre"></Text>
 			</HBox>
 			<Text styleClass="texteSons" text="%musique"></Text>
-			<Slider styleClass="slider"/>
-			<Text styleClass="texteSons" text="%effet"></Text>
-			<Slider styleClass="slider"/>
+			
+			<Button text="%avec"/>
+			<Button text="%sans"/>
 			
 			 
 			
@@ -31,10 +35,10 @@
     </VBox>
 	<HBox styleClass="conteneurBoutons" HBox.hgrow="ALWAYS" >
 			<HBox styleClass="conteneurBoutonCancel" HBox.hgrow="ALWAYS">
-                <Button text="%cancel"/>	
+                <Button fx:id="boutonRetour" text="%retour"/>	
 			</HBox>
 			<HBox styleClass="conteneurBoutonSave" HBox.hgrow="ALWAYS" >
-                <Button text="%save"/>
+                <Button fx:id="boutonChangerLangue" text="%changerLangue"/>
             </HBox>
 	</HBox>
          

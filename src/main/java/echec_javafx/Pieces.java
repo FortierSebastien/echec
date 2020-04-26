@@ -1,33 +1,93 @@
 package echec_javafx;
 
 import javafx.scene.image.Image;
-import javafx.scene.layout.StackPane;
 import echec_javafx.jeuEchec;
+import javafx.scene.layout.StackPane;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Ellipse;
 
-public class Pieces extends StackPane{
-	String chemin = "../resources/images/"; 
+public class Pieces extends StackPane {
+	int tile = jeuEchec.TILE_SIZE;
+	public PieceType type;
+	public  double sourisX, sourisY;
+	public  double ancienX, ancienY;
 	
-	Image pb = new  Image(chemin+"pb.PNG",jeuEchec.TILE_SIZE*0.3125,jeuEchec.TILE_SIZE*0.26,true,true);
-	Image cb = new  Image(chemin+"cb.PNG",jeuEchec.TILE_SIZE*0.3125,jeuEchec.TILE_SIZE*0.26,true,true);
-	Image fb = new  Image(chemin+"fb.PNG",jeuEchec.TILE_SIZE*0.3125,jeuEchec.TILE_SIZE*0.26,true,true);
-	Image rb = new  Image(chemin+"rb.PNG",jeuEchec.TILE_SIZE*0.3125,jeuEchec.TILE_SIZE*0.26,true,true);
-	Image reineb = new  Image(chemin+"reineBlanche.PNG",jeuEchec.TILE_SIZE*0.3125,jeuEchec.TILE_SIZE*0.26,true,true);
-	Image tb = new  Image(chemin+"tb.PNG",jeuEchec.TILE_SIZE*0.3125,jeuEchec.TILE_SIZE*0.26,true,true);
-	Image cn = new  Image(chemin+"cn.PNG",jeuEchec.TILE_SIZE*0.3125,jeuEchec.TILE_SIZE*0.26,true,true);
-	Image fn = new  Image(chemin+"fn.PNG",jeuEchec.TILE_SIZE*0.3125,jeuEchec.TILE_SIZE*0.26,true,true);
-	Image rn = new  Image(chemin+"rn.PNG",jeuEchec.TILE_SIZE*0.3125,jeuEchec.TILE_SIZE*0.26,true,true);
-	Image reinen = new  Image(chemin+"reineNoir.PNG",jeuEchec.TILE_SIZE*0.3125,jeuEchec.TILE_SIZE*0.26,true,true);
-	Image tn = new  Image(chemin+"tn.PNG",jeuEchec.TILE_SIZE*0.3125,jeuEchec.TILE_SIZE*0.26,true,true);
-	Image pn = new  Image(chemin+"pn.PNG",jeuEchec.TILE_SIZE*0.3125,jeuEchec.TILE_SIZE*0.26,true,true);
-
-	public Pieces (Image piece,int x, int y) {
-		relocate(x*jeuEchec.TILE_SIZE, y*jeuEchec.TILE_SIZE);
-		
-		
-		
+	
+	public  double getSourisX() {
+		return sourisX;
 	}
 
+	public  void setSourisX(double sourisX) {
+		this.sourisX = sourisX;
+	}
 
+	public  double getSourisY() {
+		return sourisY;
+	}
 
+	public  void setSourisY(double sourisY) {
+		this.sourisY = sourisY;
+	}
+
+	public  void setAncienX(double ancienX) {
+		this.ancienX = ancienX;
+	}
+
+	public  void setAncienY(double ancienY) {
+		this.ancienY = ancienY;
+	}
+
+	public PieceType getType() {
+		return type;
+
+	}
+	
+	public  double getAncienX() {
+		return ancienX;
+	}
+	
+	public  double getAncienY() {
+		return ancienY;
+	}
+
+	public Pieces(PieceType type, int x, int y) {
+
+		this.type = type;
+
+		move(x , y );
+
+		Ellipse ellipse = new Ellipse(tile * 0.3125, tile * 0.26);
+		ellipse.setFill(type == PieceType.noir ? Color.BLACK : Color.WHITE);
+
+		ellipse.setStroke(Color.BLACK);
+		ellipse.setStrokeWidth(tile * 0.03);
+
+		ellipse.setTranslateX((tile - tile * 0.3125 * 2) / 2);
+		ellipse.setTranslateY((tile - tile * 0.26 * 2) / 2);
+
+		getChildren().add(ellipse);
+		
+//		this.setOnMouseClicked(e->{
+			
+//			sourisX = e.getSceneX();
+//			sourisY = e.getSceneY();
+			
+//		});
+		
+//		this.setOnMouseDragged(e->{
+//			relocate(e.getSceneX() - sourisX + ancienX, e.getSceneY() - sourisY + ancienY);
+//		});
+
+	}
+	
+	public void move(int x, int y) {
+		ancienX = x*tile;
+		ancienY = y * tile;
+		
+		relocate(ancienX, ancienY);
+	}
+	public void cancellerMouvement() {
+		relocate(ancienX, ancienY);
+	}
 
 }

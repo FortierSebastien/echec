@@ -14,7 +14,19 @@ extends ControleurModeleVue<PartieLocaleLectureSeule,
    PartieLocale, 
    V, 
    A> {
-	
+	/*@Override
+	protected void installerReceptionCommandes() {
+		J.appel(this);
+		
+		installerRecepteurCommande(JouerCoup.class, new RecepteurCommandeMVC<JouerCoupRecue>() {
+			@Override
+			public void executerCommandeMVC(JouerCoupRecue commande) {
+				J.appel(this);
+				
+				modele.jouerCoup(commande.getInfoCoup());
+			}
+		});
+	} */
 	@Override
 	protected void demarrer() {
 		J.appel(this);
