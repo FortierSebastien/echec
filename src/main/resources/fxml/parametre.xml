@@ -26,8 +26,8 @@
 			</HBox>
 			<Text styleClass="texteSons" text="%musique"></Text>
 			
-			<Button text="%avec"/>
-			<Button text="%sans"/>
+			<Button fx:id="boutonMusicAvec" text="%avec"/>
+			<Button fx:id="boutonMusicSans" text="%sans"/>
 			
 			 
 			

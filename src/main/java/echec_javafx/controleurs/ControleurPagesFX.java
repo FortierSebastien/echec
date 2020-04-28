@@ -1,5 +1,6 @@
 package echec_javafx.controleurs;
 
+import java.net.URISyntaxException;
 import java.util.Locale;
 
 import Commande.NouvellePartie;
@@ -9,6 +10,10 @@ import Commande.OuvrirParametresRecue;
 import commun.debogage.J;
 import commun_client.commandes.ChangerLocale.ChangerLocale;
 import commun_client.commandes.ChangerLocale.ChangerLocaleRecue;
+import commun_client.commandes.fermer_Music.FermerMusic;
+import commun_client.commandes.fermer_Music.FermerMusicRecue;
+import commun_client.commandes.ouvrirMusic.OuvrirMusic;
+import commun_client.commandes.ouvrirMusic.OuvrirMusicRecue;
 import commun_client.commandes.retour_accueil.RetourAccueil;
 import commun_client.commandes.retour_accueil.RetourAccueilRecue;
 import commun_client.mvc.controleurs.FabriqueControleur;
@@ -17,6 +22,8 @@ import echec.modeles.Parametre;
 import echec.modeles.ParametreLectureSeule;
 import echec.modeles.PartieLocale;
 import echec_client.controleurs.ControleurPages;
+import echec_javafx.MusiqueJeu;
+import echec_javafx.Principal;
 import echec_javafx.afficheurs.AfficheurParametreFX;
 import echec_javafx.afficheurs.AfficheurPartieLocaleFX;
 import echec_javafx.vues.VueMenuFX;
@@ -24,9 +31,12 @@ import echec_javafx.vues.VuePageFX;
 import echec_javafx.vues.VueParametreFX;
 import echec_javafx.vues.VuePartieLocaleFX;
 
+
 public class ControleurPagesFX extends ControleurPages<VuePageFX> {
 
 	private static final Parametre parametres = new Parametre();
+	
+	private MusiqueJeu music;
 
 	public static ParametreLectureSeule getParametres() {
 		J.appel(ControleurMenuFX.class);
@@ -83,6 +93,25 @@ public class ControleurPagesFX extends ControleurPages<VuePageFX> {
 				instancierMVCAccueil();
 			}
 		});
+		installerRecepteurCommande(FermerMusic.class, new RecepteurCommandeMVC<FermerMusicRecue>() {
+
+			@Override
+			public void executerCommandeMVC(FermerMusicRecue commande) {
+				J.appel(this); 
+				
+				music.fermerMusic();
+				
+			}
+		});
+		installerRecepteurCommande(OuvrirMusic.class, new RecepteurCommandeMVC<OuvrirMusicRecue>() {
+
+			@Override
+			public void executerCommandeMVC(OuvrirMusicRecue commande) {
+				J.appel(this); 
+				music.OuvrirMusic();
+				
+			}
+		});
 
 	}
 
@@ -93,7 +122,12 @@ public class ControleurPagesFX extends ControleurPages<VuePageFX> {
 
 		instancierMVCParametres();
 		instancierMVCAccueil();
-
+		try {
+			music = new MusiqueJeu();
+		} catch (URISyntaxException e) {
+			
+			e.printStackTrace();
+		}
 	}
 
 	private void instancierMVCParametres() {
