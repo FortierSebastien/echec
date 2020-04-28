@@ -2,6 +2,7 @@ package echec_javafx;
 
 import java.awt.HeadlessException;
 import java.io.File;
+import java.net.URL;
 import java.nio.file.Files;
 import java.util.ArrayList;
 
@@ -29,18 +30,19 @@ public class jeuEchec extends Application {
 
 	private static Group tileGroup = new Group();
 	private static Group pieceGroup = new Group();
+	
+	private MediaPlayer player;
 
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 		
-		File file = new File("/echec/echec_git/jeu_echec_SF-Atelier01/src/main/resources/Son/Electro-blues-groovy-lounge-track.mp3");
+		URL urlMusic = jeuEchec.class.getResource("/Son/Electro-blues-groovy-lounge-track.mp3");
 		
-		Media music = new Media(file.toURI().toString());
-		MediaPlayer player = new MediaPlayer(music);
-		//player.autoPlayProperty();
-		//player.setCycleCount(M);
-
+		Media music = new Media(urlMusic.toURI().toString());
+		player = new MediaPlayer(music);
+		player.setCycleCount(MediaPlayer.INDEFINITE);
 		player.play();
+
 		Scene scene = new Scene(createContent());
 		primaryStage.setTitle("Chess");
 		primaryStage.setScene(scene);
